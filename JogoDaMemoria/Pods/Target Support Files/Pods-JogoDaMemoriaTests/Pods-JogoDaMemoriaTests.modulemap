@@ -1,0 +1,6 @@
+framework module Pods_JogoDaMemoriaTests {
+  umbrella header "Pods-JogoDaMemoriaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
