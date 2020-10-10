@@ -10,6 +10,7 @@
 		7C1313C1F6340F1448699FF4 /* Pods_JogoDaMemoria_JogoDaMemoriaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579B030FF96A0AD22952E4DF /* Pods_JogoDaMemoria_JogoDaMemoriaUITests.framework */; };
 		CE32E80E649A078AEA547661 /* Pods_JogoDaMemoria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473E8C1212F15CA98E725507 /* Pods_JogoDaMemoria.framework */; };
 		D0E9D67937BB8F980D9ECAF1 /* Pods_JogoDaMemoriaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD597C59214BC798FF7D60D /* Pods_JogoDaMemoriaTests.framework */; };
+		F1A9A40325325A770020922D /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A9A40225325A770020922D /* CardViewCell.swift */; };
 		F1F1B5192532163700CE7BC6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F1B5182532163700CE7BC6 /* Card.swift */; };
 		F1F1B51B253237A700CE7BC6 /* JogoDaMemoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F1B51A253237A700CE7BC6 /* JogoDaMemoria.swift */; };
 		F1F878922531FCD10045458A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F878912531FCD10045458A /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 		65ADCA1248B3AC3674F0CD1E /* Pods-JogoDaMemoria-JogoDaMemoriaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogoDaMemoria-JogoDaMemoriaUITests.debug.xcconfig"; path = "Target Support Files/Pods-JogoDaMemoria-JogoDaMemoriaUITests/Pods-JogoDaMemoria-JogoDaMemoriaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7BD597C59214BC798FF7D60D /* Pods_JogoDaMemoriaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JogoDaMemoriaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D23462F5D3B52336513F95 /* Pods-JogoDaMemoria-JogoDaMemoriaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogoDaMemoria-JogoDaMemoriaUITests.release.xcconfig"; path = "Target Support Files/Pods-JogoDaMemoria-JogoDaMemoriaUITests/Pods-JogoDaMemoria-JogoDaMemoriaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F1A9A40225325A770020922D /* CardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = "<group>"; };
 		F1F1B5182532163700CE7BC6 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		F1F1B51A253237A700CE7BC6 /* JogoDaMemoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogoDaMemoria.swift; sourceTree = "<group>"; };
 		F1F8788E2531FCD10045458A /* JogoDaMemoria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JogoDaMemoria.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F1A9A401253251310020922D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F1F878952531FCD10045458A /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F1E5CC7E2532497B0090DCFE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1A9A40225325A770020922D /* CardViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F1F1B5172532162300CE7BC6 /* Modelos */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +157,8 @@
 		F1F878902531FCD10045458A /* JogoDaMemoria */ = {
 			isa = PBXGroup;
 			children = (
-				F1F878952531FCD10045458A /* ViewController.swift */,
+				F1A9A401253251310020922D /* Controller */,
+				F1E5CC7E2532497B0090DCFE /* Views */,
 				F1F1B5172532162300CE7BC6 /* Modelos */,
 				F1F878912531FCD10045458A /* AppDelegate.swift */,
 				F1F878932531FCD10045458A /* SceneDelegate.swift */,
@@ -407,6 +426,7 @@
 				F1F878942531FCD10045458A /* SceneDelegate.swift in Sources */,
 				F1F1B5192532163700CE7BC6 /* Card.swift in Sources */,
 				F1F1B51B253237A700CE7BC6 /* JogoDaMemoria.swift in Sources */,
+				F1A9A40325325A770020922D /* CardViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

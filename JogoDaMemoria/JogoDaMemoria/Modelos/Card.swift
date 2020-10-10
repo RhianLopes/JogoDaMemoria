@@ -30,6 +30,7 @@ extension Card {
             let imagem = UIImage(named: "card_\(i)")
             cards.append(Card(imagemMemoria: imagem))
         }
+        print(cards)
         return cards + cards
     }
 }
