@@ -14,10 +14,22 @@ class Card {
     var imagemMemoria: UIImage!
     var imagemDefault: UIImage!
     
-    init(imagemMemoria: UIImage) {
+    init(imagemMemoria: UIImage?) {
         self.id = NSUUID().uuidString
         self.estaVisivel = false
         self.imagemMemoria = imagemMemoria
-        self.imagemMemoria =
+        self.imagemDefault = UIImage(named: "imagem_card_default")
+    }
+}
+
+extension Card {
+    
+    class func buscarCards() -> [Card] {
+        var cards: [Card] = []
+        for i in 0...4 {
+            let imagem = UIImage(named: "card_\(i)")
+            cards.append(Card(imagemMemoria: imagem))
+        }
+        return cards + cards
     }
 }
