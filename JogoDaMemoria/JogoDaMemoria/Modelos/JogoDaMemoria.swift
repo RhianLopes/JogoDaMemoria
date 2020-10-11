@@ -12,6 +12,7 @@ class JogoDaMemoria {
     var cards: [Card] = []
     var cardsMostrados: [Card] = []
     var cardsEmSelecao: [Card] = []
+    var contadorTentativas: Int = 0
     
     init() {
     }
@@ -25,6 +26,7 @@ class JogoDaMemoria {
         self.cards.removeAll()
         self.cardsMostrados.removeAll()
         self.cardsEmSelecao.removeAll()
+        self.contadorTentativas = 0
     }
     
     func embaralharCards(cards: [Card]) -> [Card] {
@@ -47,10 +49,12 @@ class JogoDaMemoria {
                 self.cardsMostrados.append(contentsOf: cardsEmSelecao)
                 self.cardsEmSelecao = []
                 cardViewCell.estaVisivel = true
+                self.gravarTentativa()
                 return []
             } else {
                 let cardsDevemVirar = self.cardsEmSelecao
                 self.cardsEmSelecao = []
+                self.gravarTentativa()
                 return cardsDevemVirar
             }
         }
@@ -61,10 +65,6 @@ class JogoDaMemoria {
         return cardsMostrados.count == cards.count
     }
     
-    private func cardsPares() -> Bool {
-        return self.cardsEmSelecao[0].pairId == self.cardsEmSelecao[1].pairId
-    }
-    
     func indexForCard(_ card: Card) -> Int? {
         for index in 0...cards.count-1 {
             if card === cards[index] {
@@ -72,5 +72,13 @@ class JogoDaMemoria {
             }
         }
         return nil
+    }
+    
+    private func cardsPares() -> Bool {
+        return self.cardsEmSelecao[0].pairId == self.cardsEmSelecao[1].pairId
+    }
+    
+    private func gravarTentativa() {
+        self.contadorTentativas += 1
     }
 }

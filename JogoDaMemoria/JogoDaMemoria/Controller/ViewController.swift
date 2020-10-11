@@ -47,7 +47,7 @@ class ViewController: UIViewController {
 
     private func avisarFimDeJogo() {
         //TODO: rhian.costa - 11/10/20 - substituir x por lógica de contagem de tentativas
-        let alerta = UIAlertController(title: "Boa, você terminou!", message: "Você precisou de X tentativas para finalizar o jogo da memória.", preferredStyle: .alert)
+        let alerta = UIAlertController(title: "Boa, você terminou!", message: "Você precisou de \(self.jogo.contadorTentativas) tentativas para finalizar o jogo da memória.", preferredStyle: .alert)
         alerta.addAction(acao)
         present(alerta, animated: true, completion: nil)
     }
