@@ -10,12 +10,15 @@ import UIKit
 class Card {
     
     var id: String
+    var indice: Int?
+    var pairId: Int
     var estaVisivel: Bool = false
     var imagemMemoria: UIImage!
     var imagemDefault: UIImage!
     
-    init(imagemMemoria: UIImage?) {
+    init(_ imagemMemoria: UIImage?, _ pairId: Int) {
         self.id = NSUUID().uuidString
+        self.pairId = pairId
         self.estaVisivel = false
         self.imagemMemoria = imagemMemoria
         self.imagemDefault = UIImage(named: "imagem_card_default")
@@ -26,11 +29,12 @@ extension Card {
     
     class func buscarCards() -> [Card] {
         var cards: [Card] = []
-        for i in 0...4 {
-            let imagem = UIImage(named: "card_\(i)")
-            cards.append(Card(imagemMemoria: imagem))
+        for _ in 0...1 {
+            for y in 0...4 {
+                let imagem = UIImage(named: "card_\(y)")
+                cards.append(Card(imagem, y))
+            }
         }
-        print(cards)
-        return cards + cards
+        return cards
     }
 }

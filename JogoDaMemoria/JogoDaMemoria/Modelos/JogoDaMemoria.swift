@@ -26,20 +26,26 @@ class JogoDaMemoria {
     }
     
     func buscarCardNoIndice(_ index: Int) -> Card? {
-        return cards[index]
+        let card = cards[index]
+        card.indice = index
+        return card
     }
     
-    func deveSelecionarCard(card: Card?) -> [Card] {
-        guard card != nil else { return [] }
+    func deveSelecionarCard(cardViewCell: CardViewCell) -> [Card] {
+        guard cardViewCell.card != nil else { return [] }
+        let card = cardViewCell.card
         self.cardsEmSelecao.append(card!)
         
         if self.cardsEmSelecao.count == 2 {
             if cardsPares() {
                 self.cardsMostrados.append(contentsOf: cardsEmSelecao)
                 self.cardsEmSelecao = []
-                return self.cardsEmSelecao
+                cardViewCell.estaVisivel = true
+                return []
             } else {
-                return self.cardsEmSelecao
+                let cardsDevemVirar = self.cardsEmSelecao
+                self.cardsEmSelecao = []
+                return cardsDevemVirar
             }
         }
         return []
@@ -50,7 +56,7 @@ class JogoDaMemoria {
     }
     
     private func cardsPares() -> Bool {
-        return self.cardsEmSelecao[0].id == self.cardsEmSelecao[1].id
+        return self.cardsEmSelecao[0].pairId == self.cardsEmSelecao[1].pairId
     }
     
     func indexForCard(_ card: Card) -> Int? {
