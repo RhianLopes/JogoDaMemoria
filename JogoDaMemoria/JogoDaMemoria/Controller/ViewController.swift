@@ -24,7 +24,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cardViewCell = cardCollectionView.dequeueReusableCell(withReuseIdentifier: "CardViewCell", for: indexPath) as! CardViewCell
-        print(cards[indexPath.item])
         cardViewCell.memoriaImageView.image = cards[indexPath.item].imagemMemoria
         
         return cardViewCell
