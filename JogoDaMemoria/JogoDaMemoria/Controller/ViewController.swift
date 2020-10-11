@@ -11,6 +11,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     @IBOutlet weak var cardCollectionView: UICollectionView!
     
+    @IBAction func reiniciarJogoButton(_ sender: Any) {
+        resetarJogo()
+    }
+    
     var jogo: JogoDaMemoria = JogoDaMemoria()
     var cards: [Card] = []
     
@@ -21,8 +25,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func novoJogo() {
-        cards = jogo.novoJogo(cards: self.cards)
+        self.cards = jogo.novoJogo(cards: self.cards)
         cardCollectionView.reloadData()
+    }
+    
+    func resetarJogo() {
+        self.cards = Card.buscarCards()
+        jogo.resetarJogo()
+        self.cards = jogo.novoJogo(cards: self.cards)
+        self.cardCollectionView.reloadData()
+        cardCollectionView.allowsSelection = false
+        cardCollectionView.allowsSelection = true
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -34,6 +47,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         guard let card = jogo.buscarCardNoIndice(indexPath.item) else { return cardViewCell }
         cardViewCell.memoriaImageView.image = card.imagemDefault
         cardViewCell.card = card
+        cardViewCell.estaVisivel = false
         cards[indexPath.item].indice = indexPath.item
         
         return cardViewCell
@@ -57,8 +71,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 cell.memoriaImageView.image = cardDevemVirar.imagemDefault
             }
         }
-        
-        return
     }
 
     private func avisarFimDeJogo() {
@@ -68,7 +80,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     var acao: UIAlertAction { UIAlertAction(title: "Jogar novamente", style: .default) { _ in
-            self.novoJogo()
+            self.resetarJogo()
         }
     }
     

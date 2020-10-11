@@ -21,6 +21,12 @@ class JogoDaMemoria {
         return self.cards
     }
     
+    func resetarJogo() {
+        self.cards.removeAll()
+        self.cardsMostrados.removeAll()
+        self.cardsEmSelecao.removeAll()
+    }
+    
     func embaralharCards(cards: [Card]) -> [Card] {
         return cards.shuffled()
     }
