@@ -23,6 +23,10 @@ class Card {
         self.imagemMemoria = imagemMemoria
         self.imagemDefault = UIImage(named: "imagem_card_default")
     }
+    
+    func salvarIndice(indice: Int) {
+        
+    }
 }
 
 extension Card {
