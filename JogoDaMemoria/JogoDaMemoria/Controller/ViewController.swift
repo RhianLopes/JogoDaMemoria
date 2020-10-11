@@ -7,20 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
+
     @IBOutlet weak var cardCollectionView: UICollectionView!
     
-//    var cards: [Card] = Card.buscarCards()
-    var cards: [UIImage] = [
-        UIImage(named: "card_0")!,
-        UIImage(named: "card_1")!,
-        UIImage(named: "card_2")!,
-        UIImage(named: "card_3")!
-    ]
+    var cards: [Card] = Card.buscarCards()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cardCollectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -29,7 +24,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cardViewCell = cardCollectionView.dequeueReusableCell(withReuseIdentifier: "CardViewCell", for: indexPath) as! CardViewCell
-        cardViewCell.memoriaImageView.image = cards[indexPath.item]
+        print(cards[indexPath.item])
+        cardViewCell.memoriaImageView.image = cards[indexPath.item].imagemMemoria
         
         return cardViewCell
     }
