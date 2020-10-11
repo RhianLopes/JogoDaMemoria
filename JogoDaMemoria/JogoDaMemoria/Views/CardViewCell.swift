@@ -10,4 +10,6 @@ import UIKit
 class CardViewCell: UICollectionViewCell {
     
     @IBOutlet weak var memoriaImageView: UIImageView!
+    var card: Card?
+    var estaVisivel: Bool = false
 }
