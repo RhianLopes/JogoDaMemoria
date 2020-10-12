@@ -38,6 +38,26 @@ class JogoDaMemoriaTests: QuickSpec {
                     expect(jogo.contadorTentativas).to(equal(.zero))
                 }
             }
+            context("ao selecionar algum card") {
+                it("deve validar que todos os pares foram encontrados") {
+                    let cards = Card.buscarCards()
+                    jogo.cardsMostrados = cards
+                    jogo.cards = cards
+                    
+                    let jogoFinalizado = jogo.jogoFinalizado()
+                    expect(jogoFinalizado).to(beTrue())
+                }
+                it("deve validar que nem todos os pares foram encontrados") {
+                    let card: Card = Card(UIImage(named: "card_0")!, 0)
+                    let cardsMostrados: [Card] = [card]
+                    let cards = Card.buscarCards()
+                    jogo.cardsMostrados = cardsMostrados
+                    jogo.cards = cards
+                    
+                    let jogoFinalizado = jogo.jogoFinalizado()
+                    expect(jogoFinalizado).to(beFalse())
+                }
+            }
             context("ao buscar card pelo indice") {
                 it("deve possuir indice valido salvar indice") {
                     let card = Card(UIImage(named: "card_0")!, 0)
