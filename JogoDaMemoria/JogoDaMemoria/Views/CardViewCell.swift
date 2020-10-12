@@ -20,6 +20,16 @@ class CardViewCell: UICollectionViewCell {
         self.estaVisivel = false
     }
     
+    func virarCardPosicaoDefault(_ image: UIImage) {
+        self.memoriaImageView.image = image
+        self.estaVisivel = false
+    }
+    
+    func virarCardPosicaoMemoria(_ image: UIImage) {
+        self.memoriaImageView.image = image
+        self.estaVisivel = true
+    }
+    
     override func layoutSubviews() {
         self.layer.cornerRadius = 15.0
         self.layer.shadowColor = UIColor.gray.cgColor

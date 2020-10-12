@@ -12,21 +12,16 @@ class Card {
     var id: String
     var indice: Int?
     var pairId: Int
-    var estaVisivel: Bool = false
     var imagemMemoria: UIImage!
     var imagemDefault: UIImage!
     
     init(_ imagemMemoria: UIImage?, _ pairId: Int) {
         self.id = NSUUID().uuidString
         self.pairId = pairId
-        self.estaVisivel = false
         self.imagemMemoria = imagemMemoria
         self.imagemDefault = UIImage(named: "imagem_card_default")
     }
     
-    func salvarIndice(indice: Int) {
-        
-    }
 }
 
 extension Card {
