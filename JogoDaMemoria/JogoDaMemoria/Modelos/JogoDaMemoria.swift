@@ -16,7 +16,7 @@ class JogoDaMemoria {
     
     func novoJogo() {
         let cards = Card.buscarCards()
-        self.cards = self.embaralharCards(cards)
+        self.cards = cards.shuffled()
     }
     
     func resetarJogo() {
@@ -26,19 +26,22 @@ class JogoDaMemoria {
         self.contadorTentativas = 0
     }
     
-    func embaralharCards(_ cards: [Card]) -> [Card] {
-        return cards.shuffled()
+    func jogoFinalizado() -> Bool {
+        return cardsMostrados.count == cards.count
     }
     
-    func buscarCardNoIndice(_ index: Int) -> Card? {
-        let card = cards[index]
-        card.indice = index
-        return card
+    func buscarCardNoIndice(_ indice: Int) -> Card? {
+        if cards.count > indice {
+            let card = cards[indice]
+            card.salvarIndice(indice)
+            return card
+        } else {
+            return nil
+        }
     }
     
-    func deveSelecionarCard(cardViewCell: CardViewCell) -> [Card] {
-        guard cardViewCell.card != nil else { return [] }
-        let card = cardViewCell.card
+    func validarCardsDevemVirar(card: Card?) -> [Card] {
+        guard card != nil else { return [] }
         self.cardsEmSelecao.append(card!)
         
         if self.cardsEmSelecao.count == 2 {
@@ -55,10 +58,6 @@ class JogoDaMemoria {
             }
         }
         return []
-    }
-    
-    func jogoFinalizado() -> Bool {
-        return cardsMostrados.count == cards.count
     }
     
     private func cardsPares() -> Bool {

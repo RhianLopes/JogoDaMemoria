@@ -29,5 +29,4 @@ class CardViewCell: UICollectionViewCell {
         self.memoriaImageView.image = image
         self.estaVisivel = true
     }
-    
 }

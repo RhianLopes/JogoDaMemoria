@@ -53,7 +53,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -76,11 +75,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         if cardViewCell.estaVisivel { return }
         
         cardViewCell.virarCardPosicaoMemoria(self.jogo.cards[indexPath.item].imagemMemoria)
-        let cards = jogo.deveSelecionarCard(cardViewCell: cardViewCell)
+        let cards = jogo.validarCardsDevemVirar(card: cardViewCell.card)
         if jogo.jogoFinalizado() {
             avisarFimDeJogo()
         }
         self.virarCardsParaPosicaoDefault(cards, collectionView)
     }
-    
 }

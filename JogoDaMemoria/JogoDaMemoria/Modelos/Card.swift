@@ -9,19 +9,20 @@ import UIKit
 
 class Card {
     
-    var id: String
     var indice: Int?
     var pairId: Int
     var imagemMemoria: UIImage!
     var imagemDefault: UIImage!
     
-    init(_ imagemMemoria: UIImage?, _ pairId: Int) {
-        self.id = NSUUID().uuidString
+    init(_ imagemMemoria: UIImage, _ pairId: Int) {
         self.pairId = pairId
         self.imagemMemoria = imagemMemoria
         self.imagemDefault = UIImage(named: "imagem_card_default")
     }
     
+    func salvarIndice(_ indice: Int) {
+        self.indice = indice
+    }
 }
 
 extension Card {
@@ -31,7 +32,7 @@ extension Card {
         for _ in 0...1 {
             for y in 0...4 {
                 let imagem = UIImage(named: "card_\(y)")
-                cards.append(Card(imagem, y))
+                cards.append(Card(imagem!, y))
             }
         }
         return cards
