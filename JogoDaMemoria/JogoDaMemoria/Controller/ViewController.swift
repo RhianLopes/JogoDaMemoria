@@ -80,6 +80,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
         let tempoDeDelay = DispatchTime.now() + 0.5
         DispatchQueue.main.asyncAfter(deadline: tempoDeDelay) {
+            //TODO: separar em funcao
             for cardDevemVirar in cards {
                 guard let index = cardDevemVirar.indice else { continue }
                 let cell = collectionView.cellForItem(at: IndexPath(item: index, section:0)) as! CardViewCell
