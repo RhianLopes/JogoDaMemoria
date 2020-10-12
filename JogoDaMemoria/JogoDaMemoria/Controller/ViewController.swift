@@ -49,7 +49,8 @@ class ViewController: UIViewController {
             for cardDeveVirar in cards {
                 guard let index = cardDeveVirar.indice else { continue }
                 let cell = collectionView.cellForItem(at: IndexPath(item: index, section:0)) as! CardViewCell
-                cell.virarCardPosicaoDefault(cardDeveVirar.imagemDefault)
+                cardDeveVirar.virarCardPosicaoDefault()
+                cell.virarCard(cardDeveVirar.imagemDefault)
             }
         }
     }
@@ -64,6 +65,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cardViewCell = cardCollectionView.dequeueReusableCell(withReuseIdentifier: "CardViewCell", for: indexPath) as! CardViewCell
         guard let card = jogo.buscarCardNoIndice(indexPath.item) else { return cardViewCell }
+        card.virarCardPosicaoDefault()
         cardViewCell.resetarCardView(card)
         self.jogo.cards[indexPath.item].indice = indexPath.item
         
@@ -72,9 +74,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cardViewCell = collectionView.cellForItem(at: indexPath) as! CardViewCell
-        if cardViewCell.estaVisivel { return }
+        guard let card = cardViewCell.card else { return }
+        if card.estaVisivel { return }
         
-        cardViewCell.virarCardPosicaoMemoria(self.jogo.cards[indexPath.item].imagemMemoria)
+        card.virarCardPosicaoMemoria()
+        cardViewCell.virarCard(card.imagemMemoria)
         let cards = jogo.validarCardsDevemVirar(card: cardViewCell.card)
         if jogo.jogoFinalizado() {
             avisarFimDeJogo()

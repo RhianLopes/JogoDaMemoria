@@ -13,6 +13,7 @@ class Card {
     var pairId: Int
     var imagemMemoria: UIImage!
     var imagemDefault: UIImage!
+    var estaVisivel: Bool = false
     
     init(_ imagemMemoria: UIImage, _ pairId: Int) {
         self.pairId = pairId
@@ -22,6 +23,14 @@ class Card {
     
     func salvarIndice(_ indice: Int) {
         self.indice = indice
+    }
+    
+    func virarCardPosicaoMemoria() {
+        self.estaVisivel = true
+    }
+    
+    func virarCardPosicaoDefault() {
+        self.estaVisivel = false
     }
 }
 
