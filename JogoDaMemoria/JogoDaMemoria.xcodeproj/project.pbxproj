@@ -11,6 +11,7 @@
 		CE32E80E649A078AEA547661 /* Pods_JogoDaMemoria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473E8C1212F15CA98E725507 /* Pods_JogoDaMemoria.framework */; };
 		D0E9D67937BB8F980D9ECAF1 /* Pods_JogoDaMemoriaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD597C59214BC798FF7D60D /* Pods_JogoDaMemoriaTests.framework */; };
 		F14DB2332534AF0800353229 /* CardViewCell+Sombra.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14DB2322534AF0800353229 /* CardViewCell+Sombra.swift */; };
+		F14DB2372534D22500353229 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14DB2362534D22500353229 /* CardTests.swift */; };
 		F1A9A40325325A770020922D /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A9A40225325A770020922D /* CardViewCell.swift */; };
 		F1F1B5192532163700CE7BC6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F1B5182532163700CE7BC6 /* Card.swift */; };
 		F1F1B51B253237A700CE7BC6 /* JogoDaMemoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F1B51A253237A700CE7BC6 /* JogoDaMemoria.swift */; };
@@ -52,6 +53,7 @@
 		7BD597C59214BC798FF7D60D /* Pods_JogoDaMemoriaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JogoDaMemoriaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D23462F5D3B52336513F95 /* Pods-JogoDaMemoria-JogoDaMemoriaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogoDaMemoria-JogoDaMemoriaUITests.release.xcconfig"; path = "Target Support Files/Pods-JogoDaMemoria-JogoDaMemoriaUITests/Pods-JogoDaMemoria-JogoDaMemoriaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F14DB2322534AF0800353229 /* CardViewCell+Sombra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardViewCell+Sombra.swift"; sourceTree = "<group>"; };
+		F14DB2362534D22500353229 /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
 		F1A9A40225325A770020922D /* CardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = "<group>"; };
 		F1F1B5182532163700CE7BC6 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		F1F1B51A253237A700CE7BC6 /* JogoDaMemoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogoDaMemoria.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				F1F878A82531FCD40045458A /* JogoDaMemoriaTests.swift */,
 				F1F878AA2531FCD40045458A /* Info.plist */,
+				F14DB2362534D22500353229 /* CardTests.swift */,
 			);
 			path = JogoDaMemoriaTests;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F14DB2372534D22500353229 /* CardTests.swift in Sources */,
 				F1F878A92531FCD40045458A /* JogoDaMemoriaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
