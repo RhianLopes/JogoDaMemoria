@@ -40,8 +40,8 @@ extension Card {
         var cards: [Card] = []
         for _ in 0...1 {
             for y in 0...4 {
-                let imagem = UIImage(named: "card_\(y)")
-                cards.append(Card(imagem!, y))
+                guard let imagem = UIImage(named: "card_\(y)") else { return [] }
+                cards.append(Card(imagem, y))
             }
         }
         return cards
