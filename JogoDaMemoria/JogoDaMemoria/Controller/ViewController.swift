@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     }
     
     private func virarCardsParaPosicaoDefault(_ cards: [Card], _ collectionView: UICollectionView) {
-        let tempoDeDelay = DispatchTime.now() + 0.5
+        let tempoDeDelay = DispatchTime.now() + 0.7
         DispatchQueue.main.asyncAfter(deadline: tempoDeDelay) {
             for cardDeveVirar in cards {
                 guard let index = cardDeveVirar.indice else { continue }

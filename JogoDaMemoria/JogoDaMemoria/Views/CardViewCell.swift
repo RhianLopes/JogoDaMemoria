@@ -19,6 +19,13 @@ class CardViewCell: UICollectionViewCell {
     }
     
     func virarCard(_ image: UIImage) {
-        self.memoriaImageView.image = image
+        UIView.transition(
+            with: self,
+            duration: 0.5,
+            options: .transitionFlipFromRight,
+            animations: {
+                self.memoriaImageView.image = image
+            },
+            completion: nil)
     }
 }
