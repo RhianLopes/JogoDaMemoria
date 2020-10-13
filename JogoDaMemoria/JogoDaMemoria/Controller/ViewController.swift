@@ -67,7 +67,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         guard let card = jogo.buscarCardNoIndice(indexPath.item) else { return cardViewCell }
         card.virarCardPosicaoDefault()
         cardViewCell.resetarCardView(card)
-        self.jogo.cards[indexPath.item].indice = indexPath.item
+        card.salvarIndice(indexPath.item)
         
         return cardViewCell
     }
